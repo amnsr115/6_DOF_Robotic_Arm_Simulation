@@ -1,0 +1,37 @@
+asu_controller:
+
+ joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+ position_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+   - joint01
+   - joint12
+   - joint23
+   - joint34
+   - joint45
+   - joint56
+ gazebo_ros_control:
+  pid_gains:
+   joint01: {p: 100, i: 0.1, d: 10}
+   joint12: {p: 100, i: 0.1, d: 10}
+   joint23: {p: 100, i: 0.1, d: 10}
+   joint34: {p: 100, i: 0.1, d: 10}
+   joint45: {p: 100, i: 0.1, d: 10}
+   joint56: {p: 100, i: 0.1, d: 10}
+controller_list:
+ - name: asu_controller/position_controller
+   action_ns: follow_joint_trajectory
+   default: True
+   type: FollowJointTrajectory
+   joints:
+    - joint01
+    - joint12
+    - joint23
+    - joint34
+    - joint45
+    - joint56 
+   allowed_execution_duration: 1.2
+   allowed_goal_duration_margin: 0.5
+

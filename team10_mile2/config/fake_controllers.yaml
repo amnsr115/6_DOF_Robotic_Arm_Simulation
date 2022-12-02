@@ -1,0 +1,13 @@
+controller_list:
+  - name: fake_robot_six_degree_controller
+    type: $(arg execution_type)
+    joints:
+      - joint01
+      - joint12
+      - joint23
+      - joint34
+      - joint45
+      - joint56
+initial:  # Define initial robot poses.
+  - group: robot_six_degree
+    pose: Home

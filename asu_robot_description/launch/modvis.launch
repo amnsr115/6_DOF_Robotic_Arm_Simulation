@@ -1,0 +1,4 @@
+<launch>
+	<param name="robot_description" textfile="$(find asu_robot_description)/urdf/model.sdf"/>
+	<node pkg="rviz" name="rviz" type="rviz"/>
+</launch>
